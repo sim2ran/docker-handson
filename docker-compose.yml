@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  node-backend:
+    container_name: node_backend
+    build: .
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+    depends_on:
+      - mongodb
+  mongodb:
+    container_name: mongodb
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: Root
+      MONGO_INITDB_ROOT_PASSWORD: r667yu
+    volumes:
+     - mongo-data:/data/db
+    networks:
+     - app-network
+networks:
+  app-network: {}
+volumes:
+  mongo-data: {}

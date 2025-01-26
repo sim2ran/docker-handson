@@ -15,7 +15,7 @@ mongoose
 
 // Basic route
 app.get("/", (req, res) => {
-  res.send("Hello from the Node.js backend!");
+  res.send("Hello simran, you can do it! from the Node.js backend!");
 });
 
 app.listen(port, () => {
